@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "470570187338",
+    "project_id": "helpai-ee855",
+    "storage_bucket": "helpai-ee855.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470570187338:android:64132b737d59baeed0c4b3",
+        "android_client_info": {
+          "package_name": "com.example.help_a"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS9zekLYWNY0EfgOoiHbuNJN9_7IFclJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470570187338:android:c4cc8ee27e93b1aad0c4b3",
+        "android_client_info": {
+          "package_name": "com.example.help_ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS9zekLYWNY0EfgOoiHbuNJN9_7IFclJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
