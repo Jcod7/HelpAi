@@ -13,7 +13,9 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(const MyApp(title: 'HelpAi',));
+  runApp(const MyApp(
+    title: 'HelpAi',
+  ));
 }
 
 class MyApp extends StatelessWidget {
