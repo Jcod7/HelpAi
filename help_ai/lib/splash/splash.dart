@@ -22,7 +22,7 @@ class _SplashState extends State<Splash> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const MyApp(title: 'Flutter'),
+          builder: (context) => const MyApp(),
         ),
       );
     }

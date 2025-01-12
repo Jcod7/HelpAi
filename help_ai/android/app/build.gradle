@@ -42,6 +42,12 @@ android {
     }
 }
 
+dependencies {
+    // Firebase SDK dependencies
+    implementation platform('com.google.firebase:firebase-bom:31.1.0') // Esto incluye Firebase en tu proyecto
+    implementation 'com.google.firebase:firebase-auth' // Firebase Authentication
+}
+
 flutter {
     source = "../.."
 }
