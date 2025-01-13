@@ -5,6 +5,7 @@ import 'package:help_ai/screens/pages/agenda_screen.dart';
 import 'package:help_ai/screens/pages/chat_screen.dart';
 import 'package:help_ai/screens/pages/home_screen.dart';
 import 'package:help_ai/screens/pages/user_screen.dart';
+import 'package:help_ai/screens/pages/treatment.screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class MainScreen extends StatefulWidget {
@@ -22,8 +23,8 @@ class _MainScreenState extends State<MainScreen> {
     return const [
       HomeScreen(title: 'Inicio'),
       AgendaScreen(title: 'Agenda'),
-      HomeScreen(title: 'Inicio'),
       ChatScreen(title: 'Chat'),
+      TreatmentScreen(title: 'Tratamiento'),
       UserProfileScreen(title: 'Usuario'),
     ];
   }
