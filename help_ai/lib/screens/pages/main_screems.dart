@@ -1,11 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:help_ai/screens/auth/login_screen.dart';
-import 'package:help_ai/screens/pages/agenda_screen.dart';
+import 'package:help_ai/screens/pages/agenda/agenda_screen.dart';
 import 'package:help_ai/screens/pages/chat_screen.dart';
 import 'package:help_ai/screens/pages/home_screen.dart';
-import 'package:help_ai/screens/pages/user_screen.dart';
 import 'package:help_ai/screens/pages/treatment.screen.dart';
+import 'package:help_ai/screens/pages/user_screen.dart';
+
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class MainScreen extends StatefulWidget {
@@ -16,7 +17,8 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final PersistentTabController _controller = PersistentTabController(initialIndex: 0);
+  final PersistentTabController _controller =
+      PersistentTabController(initialIndex: 0);
 
   // Pantallas de las pestañas
   List<Widget> _buildScreens() {
@@ -72,7 +74,6 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     const userData = {
       "name": "José Alfredo Romero Guillén",
       "profileImage": "assets/images/profile.jpg",
@@ -106,27 +107,27 @@ class _MainScreenState extends State<MainScreen> {
         ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+          children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                Image.asset(
-                  'assets/images/logo1.png',
-                  height: 50,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Image.asset(
+                      'assets/images/logo1.png',
+                      height: 50,
+                    ),
+                  ],
                 ),
-                ],
-              ),
               ],
             ),
-            ],
-          ),
+          ],
+        ),
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         elevation: 4,
       ),
-       drawer: Drawer(
+      drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -157,14 +158,14 @@ class _MainScreenState extends State<MainScreen> {
               leading: const Icon(Icons.person),
               title: const Text('Perfil'),
               onTap: () {
-                Navigator.pop(context);
+                const UserProfileScreen(title: 'Perfil');
               },
             ),
             ListTile(
               leading: const Icon(Icons.settings),
               title: const Text('Tratamiento'),
               onTap: () {
-                Navigator.pop(context);
+                const TreatmentScreen(title: 'Tratamiento');
               },
             ),
             ListTile(

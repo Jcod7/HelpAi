@@ -1,8 +1,9 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
+import 'package:help_ai/screens/pages/agenda/agenda_screen.dart';
+import 'package:help_ai/screens/pages/treatment.screen.dart';
 import 'package:help_ai/screens/pages/user_screen.dart';
-
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key, required String title});
@@ -101,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      const UserProfileScreen(title: 'HelpAi'),
+                                      const AgendaScreen(title: 'HelpAi'),
                                 ),
                               );
                             },
@@ -114,8 +115,7 @@ class HomeScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-
-                                      const UserProfileScreen(title: 'HelpAi'),
+                                      const TreatmentScreen(title: 'HelpAi'),
                                 ),
                               );
                             },
