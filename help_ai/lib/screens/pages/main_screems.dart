@@ -158,14 +158,26 @@ class _MainScreenState extends State<MainScreen> {
               leading: const Icon(Icons.person),
               title: const Text('Perfil'),
               onTap: () {
-                const UserProfileScreen(title: 'Perfil');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const UserProfileScreen(title: 'Perfil'),
+                  ),
+                );
               },
             ),
             ListTile(
               leading: const Icon(Icons.settings),
               title: const Text('Tratamiento'),
               onTap: () {
-                const TreatmentScreen(title: 'Tratamiento');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const TreatmentScreen(title: 'Tratamiento'),
+                  ),
+                );
               },
             ),
             ListTile(
