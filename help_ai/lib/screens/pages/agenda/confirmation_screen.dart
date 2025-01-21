@@ -6,25 +6,15 @@ class ConfirmationScreen extends StatelessWidget {
   final DateTime date;
   final String time;
 
-  const ConfirmationScreen(
-      {super.key,
-      required this.doctor,
-      required this.date,
-      required this.time});
+  const ConfirmationScreen({
+    super.key,
+    required this.doctor,
+    required this.date,
+    required this.time,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final Map<String, dynamic> jsonData = {
-      "doctor": {
-        "id": "doc_001",
-        "name": "Dr. Juan Pérez",
-        "specialty": "Cardiología",
-        "clinic": "Clínica del Corazón",
-        "office": "Consultorio 101"
-      },
-      "appointment": {"date": "2025-01-15", "time": "10:00"}
-    };
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Confirmar Cita'),
@@ -46,10 +36,9 @@ class ConfirmationScreen extends StatelessWidget {
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 16),
-                    _buildInfoRow('Doctor', jsonData["doctor"]["name"]),
-                    _buildInfoRow(
-                        'Especialidad', jsonData["doctor"]["specialty"]),
-                    _buildInfoRow('Clínica', jsonData["doctor"]["clinic"]),
+                    _buildInfoRow('Doctor', doctor["nombre"]),
+                    _buildInfoRow('Especialidad', doctor["especialidad"]),
+                    _buildInfoRow('Clínica', doctor["clinica"]),
                     _buildInfoRow(
                         'Fecha', DateFormat('dd/MM/yyyy').format(date)),
                     _buildInfoRow('Hora', time),
@@ -60,10 +49,34 @@ class ConfirmationScreen extends StatelessWidget {
             const Spacer(),
             ElevatedButton(
               onPressed: () {
-                // Aquí iría la lógica para guardar la cita
-                Navigator.popUntil(context, ModalRoute.withName('/'));
+                // Mostrar un SnackBar de confirmación
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('¡Cita agendada con éxito!'),
+                    duration: Duration(seconds: 2),
+                  ),
+                );
+
+                // Esperar un momento antes de navegar para que el usuario vea el mensaje
+                Future.delayed(const Duration(seconds: 2), () {
+                  // Navegar de vuelta a la pantalla principal
+                  Navigator.of(context).popUntil((route) => route.isFirst);
+                });
               },
-              child: const Text('Confirmar Cita'),
+              child: const Padding(
+                padding: EdgeInsets.all(12.0),
+                child: Text(
+                  'Confirmar Cita',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context); // Volver a la pantalla anterior
+              },
+              child: const Text('Cancelar'),
             ),
           ],
         ),
